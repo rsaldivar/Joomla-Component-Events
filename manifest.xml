@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>com_eventosrecursos</name>
+	<author>roberto.saldivararm@gmail.com</author>
+	<descripction>COM_EVENTOSRECURSOS_DESC</descripction>
+	
+	<!--frontEnd-->
+	<files folder="site/com_eventosrecursos">
+		<filename>eventosrecursos.php</filename>
+		<filename>index.html</filename>
+		<filename>controller.php</filename>		
+		<folder>assets</folder>	
+		<folder>views</folder>
+	</files>
+
+
+	<languages folder="language/en-GB">
+		<language tag="en-GB">en-GB.com_eventosrecursos.ini</language>
+	</languages>
+	<!--PreparacionBaseDatos-->
+
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<update>
+		<sql>
+			<file charset="utf8" driver="mysql">update.sql</file>
+		</sql>
+	</update>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">uninstall.sql</file>
+		</sql>
+	</uninstall>
+
+
+	<!--backend-->
+	<administration>
+		<!--SECCION IMPORTANTE VALIDAR LOS ARCHIVOS-->
+		<files folder="administrator/components/com_eventosrecursos">
+			<filename>eventosrecursos.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>install.sql</filename>
+			<filename>uninstall.sql</filename>
+			<filename>update.sql</filename>
+		</files>
+
+	<languages folder="administrator/language/en-GB">
+		<language tag="en-GB">en-GB.com_eventosrecursos.sys.ini</language>
+		<language tag="en-GB">en-GB.com_eventosrecursos.ini</language>
+	</languages>
+
+
+	<menu link="option=com_eventosrecursos">COM_EVENTOSRECURSOS_MENU</menu>
+	<submenu>
+		<menu link="option=com_eventosrecursos&amp;task=salas">COM_EVENTOSRECURSOS_SUBMENU_SALAS</menu>
+		<menu link="option=com_eventosrecursos&amp;task=recursos">COM_EVENTOSRECURSOS_SUBMENU_RECURSOS</menu>
+		<menu link="option=com_eventosrecursos&amp;task=eventos">COM_EVENTOSRECURSOS_SUBMENU_EVENTOS</menu>
+	</submenu>
+
+	</administration>
+
+</extension>
